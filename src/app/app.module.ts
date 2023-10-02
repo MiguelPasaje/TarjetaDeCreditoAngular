@@ -29,12 +29,7 @@ import { ListarTarjetaComponent } from './components/listar-tarjeta/listar-tarje
     provideFirestore(() => getFirestore()) */
   ],
   providers: [
-    {
-      provide: 'angularfire2.app.options',
-      useValue: {
-        apiKey: 'AIzaSyDNgyLxjGeldH7fRJJhsPwS6oNpPpe0dNg',
-      },
-    }
+    
   ],
   bootstrap: [AppComponent]
 })

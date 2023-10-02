@@ -1,0 +1,11 @@
+.fa-solid{
+  cursor: pointer;
+  margin-right: 10px;
+  font-size: 20px;
+}
+.fa-solid:hover{
+  color: rgb(70, 70, 70) !important;
+  box-shadow: 1px 1px 1px 1px #d1d0d0;
+  background: #cdcdcd;
+  border-radius: 5px;
+}
