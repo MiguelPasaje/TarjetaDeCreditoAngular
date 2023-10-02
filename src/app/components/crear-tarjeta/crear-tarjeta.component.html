@@ -1,0 +1,58 @@
+<div class="card">
+  <div class="card-body">
+    <h5 class="titulo mb-3">
+      CREAR TARJETA
+    </h5>
+    <form [formGroup]="form" (ngSubmit)="crearTarjeta()">
+      <!-- Titular -->
+      <div class="input-group mb-3">
+        <span class="input-group-text">
+          <i class="fa-solid fa-circle-user"
+            [class.green-icon]="form.get('titular')?.valid && form.get('titular')?.touched"
+            [class.red-icon]="form.get('titular')?.invalid && form.get('titular')?.touched"></i>
+        </span>
+        <input type="text" formControlName="titular" class="form-control" placeholder="Titular">
+      </div>
+
+      <!-- Número de Tarjeta -->
+      <div class="input-group mb-3">
+        <span class="input-group-text">
+          <i class="fa-solid fa-credit-card" [class.green-icon]="form.get('numeroTarjeta')?.valid"
+            [class.red-icon]="form.get('numeroTarjeta')?.invalid && form.get('numeroTarjeta')?.touched"></i>
+        </span>
+        <input type="text" maxlength="16" formControlName="numeroTarjeta" class="form-control"
+          placeholder="Número de Tarjeta">
+      </div>
+
+      <!-- Fecha de Expiración y CVV -->
+      <div class="row">
+        <div class="col-lg-7">
+          <div class="input-group mb-3">
+            <span class="input-group-text">
+              <i class="fa-solid fa-calendar-alt" [class.green-icon]="form.get('fechaExpiracion')?.valid"
+                [class.red-icon]="form.get('fechaExpiracion')?.invalid && form.get('fechaExpiracion')?.touched"></i>
+            </span>
+            <input type="text" maxlength="5" formControlName="fechaExpiracion" class="form-control" placeholder="MM/YY">
+          </div>
+        </div>
+        <div class="col-lg-5">
+          <div class="input-group mb-3">
+            <span class="input-group-text">
+              <i class="fa-solid fa-key" [class.green-icon]="form.get('cvv')?.valid"
+                [class.red-icon]="form.get('cvv')?.invalid && form.get('cvv')?.touched"></i>
+            </span>
+            <input type="password" maxlength="3" formControlName="cvv" class="form-control" placeholder="CVV">
+          </div>
+        </div>
+      </div>
+
+      <!-- Botón de Enviar -->
+      <div class="d-grid gap-2">
+        <button [disabled]="form.invalid" class="btn btn-success btn-lg" type="submit">
+          <i class="fas fa-database"></i>
+          Aceptar
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

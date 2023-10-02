@@ -4,6 +4,7 @@
   "newProjectRoot": "projects",
   "projects": {
     "TarjetaDeCredito": {
+      "apiKey": "./api-key.json",
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -25,9 +26,14 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/@popperjs/core/dist/umd/popper.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.min.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -90,6 +96,13 @@
               "src/styles.css"
             ],
             "scripts": []
+          }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "version": 2,
+            "browserTarget": "TarjetaDeCredito:build:production"
           }
         }
       }
