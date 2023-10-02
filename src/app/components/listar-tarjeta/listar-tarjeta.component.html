@@ -5,10 +5,10 @@
     </h5>
     <table class="table">
       <tbody>
-        <tr>
-          <td>nname 1asdf</td>
-          <td>1234567890adsf</td>
-          <td>01/23</td>
+        <tr *ngFor="let tarjeta of listTarjetas">
+          <td>{{tarjeta.titular}}</td>
+          <td>{{tarjeta.numeroTarjeta}}</td>
+          <td>{{tarjeta.fechaExpiracion}}</td>
           <td>
             <i class="fa-solid fa-pen-to-square text-info"></i>
             <i class="fa-solid fa-trash-can text-danger"></i>
