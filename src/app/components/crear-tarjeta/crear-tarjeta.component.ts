@@ -7,10 +7,11 @@ import { TarjetaService } from 'src/app/services/tarjeta.service';
 @Component({
   selector: 'app-crear-tarjeta',
   templateUrl: './crear-tarjeta.component.html',
-  styleUrls: ['./crear-tarjeta.component.css']
+  styleUrls: ['./crear-tarjeta.component.css'],
 })
 export class CrearTarjetaComponent {
   form: FormGroup;
+  loading: boolean = false;
 
   constructor(
     private fb: FormBuilder,
@@ -48,16 +49,18 @@ export class CrearTarjetaComponent {
       fechaActualizacion: new Date(),
     };
     console.log(TARJETA);
+    this.loading = true;
     this._tarjetaService.guardarTarjeta(TARJETA).then(
       () => {
         console.log('success');
-        this.toastr.success('registro exitoso','Tarjeta Registrada')
-        this.form.reset()
+        this.toastr.success('registro exitoso', 'Tarjeta Registrada');
+        this.form.reset();
+        this.loading = false;
       },
       (err) => {
-        console.log(err,'error al adicionar tarjeta');
-        this.toastr.error('opps..','Error')
-
+        console.log(err, 'error al adicionar tarjeta');
+        this.toastr.error('opps..', 'Error');
+        this.loading = false;
       }
     );
   }
