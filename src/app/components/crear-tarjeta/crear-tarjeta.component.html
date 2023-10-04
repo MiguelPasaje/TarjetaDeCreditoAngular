@@ -1,14 +1,14 @@
 <div class="card">
   <div class="card-body">
     <h5 class="titulo mb-3">
-      CREAR TARJETA
+     {{ titulo | uppercase}}
       <div *ngIf="loading" class="d-flex justify-content-center">
         <div class="spinner-border" role="status">
           <span class="visually-hidden">Loading...</span>
         </div>
       </div>
     </h5>
-    <form [formGroup]="form" (ngSubmit)="crearTarjeta()">
+    <form [formGroup]="form" (ngSubmit)="guardarTarjeta()">
       <!-- Titular -->
       <div class="input-group mb-3">
         <span class="input-group-text">

@@ -10,8 +10,8 @@
           <td>{{tarjeta.numeroTarjeta}}</td>
           <td>{{tarjeta.fechaExpiracion}}</td>
           <td>
-            <i class="fa-solid fa-pen-to-square text-info"></i>
-            <i class="fa-solid fa-trash-can text-danger"></i>
+            <i (click)="editarTarjeta(tarjeta)" class="fa-solid fa-pen-to-square text-info"></i>
+            <i (click)="eliminarTarjeta(tarjeta.id)" class="fa-solid fa-trash-can text-danger"></i>
           </td>
         </tr>
       </tbody>
